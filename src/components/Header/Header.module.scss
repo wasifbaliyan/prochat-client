@@ -1,0 +1,30 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2a2f32;
+  padding: 0.5rem 1rem;
+}
+
+.Brand {
+  display: flex;
+  align-items: center;
+  & img {
+    width: 50px;
+  }
+}
+.List {
+  list-style: none;
+  display: flex;
+  & .Item {
+    margin: 0 0.5rem;
+  }
+}
+.Item {
+  position: relative;
+}
+.Button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}

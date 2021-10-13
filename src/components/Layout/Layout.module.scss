@@ -1,0 +1,13 @@
+.Layout {
+  background-color: #262d31;
+  border-radius: 1rem;
+  margin: 2vh auto;
+  max-width: 1280px;
+  height: 96vh;
+  display: flex;
+  overflow: hidden;
+  min-width: 600px;
+}
+.Main {
+  flex-grow: 1;
+}

@@ -1,0 +1,38 @@
+.Chat {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #777;
+  &:hover {
+    background-color: #2d3134;
+  }
+}
+
+.Profile {
+  flex-basis: 60px;
+  display: flex;
+  justify-content: center;
+  & img {
+    width: 50px;
+  }
+}
+.Info {
+  flex-grow: 1;
+}
+.Section {
+  & h5 {
+    color: #ccc;
+  }
+  & p {
+    color: #777;
+    font-size: 0.9rem;
+  }
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.Last {
+  & p {
+    color: #777;
+  }
+}

@@ -1,0 +1,24 @@
+.Parent {
+  width: 100%;
+  display: flex;
+}
+
+.Message {
+  padding: 0.5rem 1rem;
+  width: 65%;
+  background-color: #056162;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  & h5 {
+    color: #2ab086;
+  }
+  & p {
+    color: #eee;
+  }
+  & div {
+    color: #ccc;
+    text-align: right;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+  }
+}

@@ -1,0 +1,21 @@
+.Form {
+  margin: 0.9rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Input {
+  background-color: #323739;
+  border: none;
+  width: 95%;
+  padding: 0.7rem 01rem;
+  border-radius: 28px;
+  color: #fff;
+}
+.Button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  margin-left: 0.3rem;
+}
