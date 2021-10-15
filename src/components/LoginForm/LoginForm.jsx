@@ -10,14 +10,7 @@ export default function LoginForm({ setRegister }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      const user = userCredential.user;
-
-      console.log(user);
+      await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
       // const errorCode = error.code;
       const errorMessage = error.message;
@@ -25,10 +18,14 @@ export default function LoginForm({ setRegister }) {
     }
   };
 
-  const loginAsGuest = (e) => {
-    setEmail("tomato@mail.com");
-    setPassword("tomato");
-    handleLogin(e);
+  const loginAsGuest = async (e) => {
+    try {
+      await signInWithEmailAndPassword(auth, "tomato@mail.com", "tomato");
+    } catch (error) {
+      // const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+    }
   };
 
   return (
