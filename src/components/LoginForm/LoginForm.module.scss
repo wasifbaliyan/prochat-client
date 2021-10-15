@@ -1,0 +1,66 @@
+.FormContainer {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  & h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+}
+.Form {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 420px;
+  & input {
+    width: 100%;
+    padding: 0.8rem 2rem;
+    border-radius: 1.5rem;
+    margin: 0.5rem;
+    background-color: #eee;
+    border: none;
+  }
+  & button {
+    width: 100%;
+    padding: 0.8rem 2rem;
+    border-radius: 1.5rem;
+    margin: 0.5rem;
+    background-color: #00bfa5;
+    border: none;
+    border: 1px solid #00bfa5;
+
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+  }
+  & .Guest {
+    width: 100%;
+    padding: 0.8rem 2rem;
+    border-radius: 1.5rem;
+    background-color: #fff;
+    margin: 0.5rem;
+    border: 1px solid #00bfa5;
+    text-transform: uppercase;
+    color: #00bfa5;
+  }
+}
+
+.Link {
+  text-align: center;
+  margin-top: 0.4rem;
+  & button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    & span {
+      color: #00bfa5;
+    }
+  }
+}
+.Image {
+  text-align: center;
+  & img {
+    width: 70px;
+  }
+}

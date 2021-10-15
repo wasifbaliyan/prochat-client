@@ -1,0 +1,25 @@
+.Login {
+  position: relative;
+  width: 100vw;
+}
+.TopBox {
+  height: 30vh;
+  background-color: #00bfa5;
+}
+
+.FormBox {
+  position: absolute;
+  border-radius: 1rem;
+  left: 0;
+  right: 0;
+  top: 15vh;
+  height: 70vh;
+  min-width: 350px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  & h3 {
+    text-align: center;
+  }
+}
