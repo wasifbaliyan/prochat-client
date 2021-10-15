@@ -11,8 +11,12 @@ export default function RegisterForm({ setRegister }) {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      console.log(auth.currentUser);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      userCredential.user.displayName = displayName;
       await addDoc(collection(db, "users"), {
         name: displayName,
         uid: auth.currentUser.uid,
