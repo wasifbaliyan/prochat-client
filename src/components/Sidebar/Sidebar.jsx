@@ -16,7 +16,7 @@ export default function Sidebar() {
         />
       </div>
       <div>
-        {showUsers && <Users />}
+        {showUsers && <Users setShowUsers={setShowUsers} />}
         {!showUsers && <Chats />}
       </div>
     </aside>

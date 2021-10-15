@@ -35,7 +35,9 @@ export default function Header({ setShowUsers, showUsers }) {
           >
             <MdMoreVert size={25} color="#ccc" />
           </button>
-          {showMenu && <Menu />}
+          {showMenu && (
+            <Menu setShowUsers={setShowUsers} setShowMenu={setShowMenu} />
+          )}
         </li>
       </ul>
     </nav>

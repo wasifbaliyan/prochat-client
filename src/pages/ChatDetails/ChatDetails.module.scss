@@ -1,3 +1,42 @@
 .ChatDetails {
   height: 100vh;
 }
+
+.Messages {
+  height: calc(100% - 10.5rem);
+  background-image: url(https://res.cloudinary.com/dnboldv5r/image/upload/v1634158161/prochat/wa-bg_hzxngt.jpg);
+  background-position: center;
+  background-size: contain;
+  padding: 2rem 1rem;
+  overflow-y: scroll;
+}
+.Form {
+  margin: 0.9rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Input {
+  background-color: #323739;
+  border: none;
+  width: 95%;
+  padding: 0.7rem 1rem;
+  border-radius: 28px;
+  color: #fff;
+}
+.Button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 5px 5px;
+  margin-left: 0.3rem;
+  transition: 0.1s ease-in;
+  &:hover {
+    background-color: #ccc;
+  }
+}

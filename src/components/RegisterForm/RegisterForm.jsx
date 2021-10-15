@@ -11,17 +11,14 @@ export default function RegisterForm({ setRegister }) {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      userCredential.user.displayName = displayName;
+      await createUserWithEmailAndPassword(auth, email, password);
       await addDoc(collection(db, "users"), {
         name: displayName,
         uid: auth.currentUser.uid,
         email: auth.currentUser.email,
+        status: "Hey there, I'm using proChat!",
       });
+      auth.currentUser.displayName = displayName;
     } catch (error) {
       // const errorCode = error.code;
       const errorMessage = error.message;

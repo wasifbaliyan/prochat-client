@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Message.module.scss";
-export default function Message({ side }) {
+export default function Message({ side, message }) {
   return (
     <div
       className={styles.Parent}
@@ -11,11 +11,8 @@ export default function Message({ side }) {
       }
     >
       <div className={styles.Message}>
-        <h5>Wasif Baliyan</h5>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum libero
-          vero non impedit. Adipisci, suscipit.
-        </p>
+        <h5>{message.from}</h5>
+        <p>{message.text}</p>
         <div>
           <span>11:52</span>
         </div>

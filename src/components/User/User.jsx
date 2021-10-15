@@ -2,10 +2,12 @@ import React from "react";
 import styles from "./User.module.scss";
 import { addDoc, collection } from "firebase/firestore";
 import { auth, db } from "../../firebase";
-export default function User({ user }) {
+import { useHistory } from "react-router";
+export default function User({ user, setShowUsers }) {
+  const history = useHistory();
   const handleAddChat = async () => {
     try {
-      await addDoc(collection(db, "chats"), {
+      const res = await addDoc(collection(db, "chats"), {
         members: [
           {
             email: auth.currentUser.email,
@@ -15,6 +17,8 @@ export default function User({ user }) {
           { email: user.email, uid: user.uid, name: user.name },
         ],
       });
+      history.replace(`/chats/${res.id}`);
+      setShowUsers(false);
     } catch (error) {
       // const errorCode = error.code;
       const errorMessage = error.message;
