@@ -1,6 +1,6 @@
 ![Logo](https://res.cloudinary.com/dnboldv5r/image/upload/v1634375806/prochat/Prochat_1_yl410m.png)
 
-An 1-to-1 realtime chat app built using ReactJS, firebase, SCSS, react router etc
+A 1-to-1 realtime chat app built using ReactJS, firebase, SCSS, react router etc
 
 ## Tech Stack
 
@@ -27,7 +27,7 @@ An 1-to-1 realtime chat app built using ReactJS, firebase, SCSS, react router et
 
 ## Demo
 
-Live app link:
+Live app link: https://prochathq.netlify.app/
 
 ## Run Locally
 
