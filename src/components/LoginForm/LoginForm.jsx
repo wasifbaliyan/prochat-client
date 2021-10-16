@@ -20,6 +20,8 @@ export default function LoginForm({ setRegister }) {
 
   const loginAsGuest = async (e) => {
     try {
+      setEmail("tomato@mail.com");
+      setPassword("tomato");
       await signInWithEmailAndPassword(auth, "tomato@mail.com", "tomato");
     } catch (error) {
       // const errorCode = error.code;
