@@ -12,7 +12,6 @@ export default function LoginForm({ setRegister }) {
     try {
       await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
-      // const errorCode = error.code;
       const errorMessage = error.message;
       alert(errorMessage);
     }
@@ -24,7 +23,6 @@ export default function LoginForm({ setRegister }) {
       setPassword("tomato");
       await signInWithEmailAndPassword(auth, "tomato@mail.com", "tomato");
     } catch (error) {
-      // const errorCode = error.code;
       const errorMessage = error.message;
       alert(errorMessage);
     }
@@ -44,6 +42,7 @@ export default function LoginForm({ setRegister }) {
               type="email"
               placeholder="Email address"
               required
+              value={email}
             />
           </div>
           <div>
@@ -52,9 +51,28 @@ export default function LoginForm({ setRegister }) {
               type="password"
               placeholder="Password"
               required
+              value={password}
             />
           </div>
-          <button>Login</button>
+          <button
+            style={
+              email.trimStart().length === 0 ||
+              password.trimStart().length === 0
+                ? {
+                    cursor: "not-allowed",
+                    backgroundColor: "#ccc",
+                    color: "#555",
+                    border: "1px solid #ccc",
+                  }
+                : {}
+            }
+            disabled={
+              email.trimStart().length === 0 ||
+              password.trimStart().length === 0
+            }
+          >
+            Login
+          </button>
           <button className={styles.Guest} onClick={loginAsGuest}>
             Login as guest
           </button>

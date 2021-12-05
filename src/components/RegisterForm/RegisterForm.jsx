@@ -20,7 +20,6 @@ export default function RegisterForm({ setRegister }) {
       });
       auth.currentUser.displayName = displayName;
     } catch (error) {
-      // const errorCode = error.code;
       const errorMessage = error.message;
       alert(errorMessage);
     }
@@ -40,6 +39,7 @@ export default function RegisterForm({ setRegister }) {
               type="text"
               placeholder="Full name"
               required
+              value={displayName}
             />
           </div>
           <div>
@@ -48,6 +48,7 @@ export default function RegisterForm({ setRegister }) {
               type="email"
               placeholder="Email address"
               required
+              value={email}
             />
           </div>
           <div>
@@ -56,9 +57,30 @@ export default function RegisterForm({ setRegister }) {
               type="password"
               placeholder="Password"
               required
+              value={password}
             />
           </div>
-          <button>Register</button>
+          <button
+            style={
+              email.trimStart().length === 0 ||
+              password.trimStart().length === 0 ||
+              displayName.trimStart().length === 0
+                ? {
+                    cursor: "not-allowed",
+                    backgroundColor: "#ccc",
+                    color: "#555",
+                    border: "1px solid #ccc",
+                  }
+                : {}
+            }
+            disabled={
+              email.trimStart().length === 0 ||
+              password.trimStart().length === 0 ||
+              displayName.trimStart().length === 0
+            }
+          >
+            Register
+          </button>
         </form>
         <div className={styles.Link}>
           <button onClick={() => setRegister(false)}>
