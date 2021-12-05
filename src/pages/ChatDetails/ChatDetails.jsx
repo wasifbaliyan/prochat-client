@@ -11,6 +11,8 @@ import { MdSend } from "react-icons/md";
 
 export default function ChatDetails() {
   const scroll = useRef();
+  const [searchQuery, setSearchQuery] = useState("");
+
   const [chatDetails, setChatDetails] = useState([]);
   const { id } = useParams();
   const [text, setText] = useState("");
@@ -29,7 +31,6 @@ export default function ChatDetails() {
         block: "end",
       });
     } catch (error) {
-      // const errorCode = error.code;
       const errorMessage = error.message;
       alert(errorMessage);
     }
@@ -60,12 +61,17 @@ export default function ChatDetails() {
       unsub();
     };
   }, [id]);
+  function filteredMessages() {
+    return chatDetails.filter((message) =>
+      message.text.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }
 
   return (
     <div className={styles.ChatDetails}>
-      <ChatHeader chatDetails={chatDetails} />
+      <ChatHeader setSearchQuery={setSearchQuery} chatDetails={chatDetails} />
       <div style={{ position: "relative" }} className={styles.Messages}>
-        {chatDetails.map((msg) => (
+        {filteredMessages().map((msg) => (
           <Message
             key={msg.id}
             message={msg}
