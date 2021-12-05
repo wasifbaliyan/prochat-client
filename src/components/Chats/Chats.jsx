@@ -8,14 +8,14 @@ export default function Chats({ chats }) {
 
   const filteredChats = chats.filter((chat) => {
     return (
-      chat.members[0].email === auth.currentUser.email ||
-      chat.members[1].email === auth.currentUser.email
+      chat.members[0].name === auth.currentUser.displayName ||
+      chat.members[1].name === auth.currentUser.displayName
     );
   });
   const searchResults = filteredChats.filter((chat) => {
     return (
-      chat.members[0].email.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      chat.members[1].email.toLowerCase().includes(searchQuery.toLowerCase())
+      chat.members[0].name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      chat.members[1].name.toLowerCase().includes(searchQuery.toLowerCase())
     );
   });
   return (

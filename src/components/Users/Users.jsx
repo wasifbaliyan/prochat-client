@@ -21,14 +21,11 @@ export default function Users({ setShowUsers, chats }) {
   }, []);
 
   const filteredUsers = users.filter(
-    (user) => user.email !== auth.currentUser.email
+    (user) => user.name !== auth.currentUser.displayName
   );
   // console.log(filteredUsers);
   const searchResults = filteredUsers.filter((user) => {
-    return (
-      user.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      user.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    return user.name.toLowerCase().includes(searchQuery.toLowerCase());
   });
   return (
     <>

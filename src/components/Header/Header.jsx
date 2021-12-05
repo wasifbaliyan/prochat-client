@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Header.module.scss";
 import { MdChat, MdMoreVert, MdKeyboardBackspace } from "react-icons/md";
 import Menu from "../Menu/Menu";
-
+import { auth } from "../../firebase";
 export default function Header({ setShowUsers, showUsers }) {
   const [showMenu, setShowMenu] = useState(false);
   return (
@@ -10,6 +10,9 @@ export default function Header({ setShowUsers, showUsers }) {
       {!showUsers && (
         <div className={styles.Brand}>
           <img src="/favicon.png" alt="profile" />
+          <h4 style={{ marginLeft: ".6rem" }}>
+            {auth.currentUser.displayName}
+          </h4>
         </div>
       )}
       {showUsers && (
