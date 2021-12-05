@@ -10,12 +10,12 @@ export default function User({ user, setShowUsers, chats }) {
     let found = null;
     chats.forEach((chat) => {
       if (
-        chat.members[0].email === auth.currentUser.email ||
-        chat.members[1].email === auth.currentUser.email
+        chat.members[0].name === auth.currentUser.displayName ||
+        chat.members[1].name === auth.currentUser.displayName
       ) {
         if (
-          chat.members[0].email === user.email ||
-          chat.members[1].email === user.email
+          chat.members[0].name === user.name ||
+          chat.members[1].name === user.name
         ) {
           found = chat;
         }
@@ -42,7 +42,6 @@ export default function User({ user, setShowUsers, chats }) {
         setShowUsers(false);
       }
     } catch (error) {
-      // const errorCode = error.code;
       const errorMessage = error.message;
       alert(errorMessage);
     }
@@ -54,7 +53,7 @@ export default function User({ user, setShowUsers, chats }) {
       </div>
       <div className={styles.Info}>
         <div className={styles.Section}>
-          <h5>{user.email}</h5>
+          <h5>{user.name}</h5>
         </div>
         <div className={styles.Last}>
           <p>{user.status}</p>

@@ -3,6 +3,8 @@ import styles from "./RegisterForm.module.scss";
 import { auth, db } from "../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { addDoc, collection } from "firebase/firestore";
+import { updateProfile } from "firebase/auth";
+
 export default function RegisterForm({ setRegister }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,7 +20,10 @@ export default function RegisterForm({ setRegister }) {
         email: auth.currentUser.email,
         status: "Hey there, I'm using proChat!",
       });
-      auth.currentUser.displayName = displayName;
+      await updateProfile(auth.currentUser, {
+        displayName: displayName,
+      });
+      // auth.currentUser.displayName = displayName;
     } catch (error) {
       const errorMessage = error.message;
       alert(errorMessage);

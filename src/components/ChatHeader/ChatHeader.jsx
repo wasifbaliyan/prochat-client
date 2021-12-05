@@ -20,9 +20,9 @@ export default function ChatHeader({ setSearchQuery }) {
 
   function chatWith() {
     if (chat && chat.members && chat.members.length !== 0) {
-      return auth.currentUser.email === chat.members[0].email
-        ? chat.members[1].email
-        : chat.members[0].email;
+      return auth.currentUser.displayName === chat.members[0].name
+        ? chat.members[1].name
+        : chat.members[0].name;
     }
   }
 

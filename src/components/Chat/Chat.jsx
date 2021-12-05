@@ -1,8 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Chat.module.scss";
+import { auth } from "../../firebase";
 
 export default function Chat({ chat }) {
+  const otherUser = () => {
+    if (auth.currentUser.displayName === chat.members[0].name) {
+      return chat.members[1].name;
+    } else {
+      return chat.members[0].name;
+    }
+  };
   return (
     <NavLink
       activeStyle={{ backgroundColor: "#2d3134", display: "block" }}
@@ -15,7 +23,7 @@ export default function Chat({ chat }) {
         </div>
         <div className={styles.Info}>
           <div className={styles.Section}>
-            <h5>{`${chat.members[0].email}, ${chat.members[1].email} chat`}</h5>
+            <h5>{otherUser()}</h5>
             <p>10/10/21</p>
           </div>
           <div className={styles.Last}>

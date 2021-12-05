@@ -8,7 +8,7 @@ import ChatDetails from "./pages/ChatDetails/ChatDetails";
 
 function App() {
   const [user] = useAuthState(auth);
-
+  console.log(user);
   return user ? (
     <Switch>
       <Route path="/" exact>
