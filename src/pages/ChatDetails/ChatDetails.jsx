@@ -22,7 +22,7 @@ export default function ChatDetails() {
     try {
       await addDoc(collection(db, `chats/${id}/messages`), {
         text,
-        from: auth.currentUser.email,
+        from: auth.currentUser.displayName,
         createdAt: Timestamp.fromDate(new Date()),
       });
       setText("");
@@ -75,7 +75,7 @@ export default function ChatDetails() {
           <Message
             key={msg.id}
             message={msg}
-            side={auth.currentUser.email === msg.from ? "right" : "left"}
+            side={auth.currentUser.displayName === msg.from ? "right" : "left"}
           />
         ))}
         <div ref={scroll}></div>
